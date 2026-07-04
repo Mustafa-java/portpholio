@@ -15,7 +15,7 @@ export const dictionaries = {
       eyebrow: 'Independent landing page designer',
       title: 'Landing pages with taste, tension, and a reason to keep scrolling.',
       subtitle:
-        'Landings_Akyl designs and builds polished web experiences for SaaS products, studios, and premium brands — with sharp positioning, expressive motion, and production-ready frontend.',
+        'Landings_Akyl designs and builds premium web experiences for SaaS and brands — with sharp positioning, expressive motion, and production-ready frontend.',
       primary: 'Explore the work',
       secondary: 'Book a landing page',
       proof: 'Selected launches across SaaS, creative, and luxury',

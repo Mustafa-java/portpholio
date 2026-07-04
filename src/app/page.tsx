@@ -443,7 +443,7 @@ export default function HomePage() {
       </header>
 
       <section id="hero" className="mx-auto max-w-7xl px-4 pb-14 pt-8 sm:px-6 sm:pb-20 sm:pt-14 lg:px-8 lg:pb-28 lg:pt-20">
-        <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-10">
+        <div className="lg:grid lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-10">
           <motion.div initial="hidden" animate="visible" variants={sectionReveal} className="space-y-5 sm:space-y-8 lg:space-y-10">
             <div className="inline-flex max-w-full rounded-full border border-border/70 bg-surface/75 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.24em] text-muted backdrop-blur-xl sm:text-xs">
               {copy.hero.eyebrow}
@@ -457,31 +457,26 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease, delay: 0.25 }}
-                className="max-w-[34rem] text-[15px] leading-6 text-muted sm:text-lg sm:leading-8 lg:text-xl"
+                className="max-w-3xl text-base leading-7 text-muted sm:text-lg sm:leading-8"
               >
                 {copy.hero.subtitle}
               </motion.p>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease, delay: 0.38 }}
-              className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4"
-            >
+            <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
               <Link
                 href="#work"
-                className="inline-flex h-12 w-full items-center justify-center rounded-full bg-accent px-5 text-sm font-medium text-white shadow-[0_20px_50px_rgba(79,70,229,0.32)] transition hover:-translate-y-0.5 hover:opacity-95 sm:w-auto sm:px-6"
+                className="flex h-10 min-w-0 items-center justify-center rounded-full bg-accent px-4 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:opacity-95 sm:h-12 sm:w-auto sm:px-6"
               >
                 {copy.hero.primary}
               </Link>
               <Link
                 href="#contact"
-                className="inline-flex h-12 w-full items-center justify-center rounded-full border border-border/70 bg-surface/75 px-5 text-sm font-medium backdrop-blur-xl transition hover:border-accent hover:text-accent sm:w-auto sm:px-6"
+                className="flex h-10 min-w-0 items-center justify-center rounded-full border border-border/70 bg-surface/75 px-4 text-sm font-medium backdrop-blur-xl transition hover:border-accent hover:text-accent sm:h-12 sm:w-auto sm:px-6"
               >
                 {copy.hero.secondary}
               </Link>
-            </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -493,7 +488,7 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
 
-          <div className="lg:pl-4">
+          <div className="hidden lg:block lg:pl-4">
             <HeroPreviewStack locale={locale} />
           </div>
         </div>
