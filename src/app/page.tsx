@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Lenis from 'lenis';
+import Starfield from '@/components/Starfield';
+import VideoBackground from '@/components/VideoBackground';
 import {
   ArrowRight,
   ExternalLink,
@@ -323,21 +325,18 @@ export default function HomePage() {
   const toggleLocale = () => setLocale(locale === 'en' ? 'ru' : 'en');
 
   return (
-    <main className="relative overflow-x-hidden bg-background text-foreground">
+    <main className="relative overflow-x-hidden text-foreground">
+      <VideoBackground />
+      <Starfield />
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-[0.045] mix-blend-soft-light" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(79,70,229,0.18),transparent_22%),radial-gradient(circle_at_82%_18%,rgba(255,122,92,0.16),transparent_22%),radial-gradient(circle_at_52%_42%,rgba(255,255,255,0.22),transparent_18%),radial-gradient(circle_at_34%_82%,rgba(40,200,180,0.14),transparent_22%)]" />
+        <div className="animated-grid absolute inset-0 opacity-[0.15]" />
         <div className="absolute left-[8%] top-[10rem] hidden h-[28rem] w-[28rem] rounded-full border border-border/40 lg:block" />
         <div className="absolute right-[10%] top-[16rem] hidden h-[20rem] w-[20rem] rounded-full border border-border/30 lg:block" />
         <div className="absolute left-1/2 top-[8rem] hidden h-[40rem] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-border/40 to-transparent xl:block" />
-        <div className="animated-grid absolute inset-0 opacity-[0.16]" />
-        <motion.div className="orb absolute left-[-8%] top-16 h-56 w-56 rounded-full bg-[rgb(79,70,229)]/26 sm:left-[2%] sm:top-24 sm:h-72 sm:w-72" />
-        <motion.div className="orb absolute right-[-12%] top-[12rem] h-[16rem] w-[16rem] rounded-full bg-[#ff7a5c]/18 sm:right-[4%] sm:top-[18rem] sm:h-[24rem] sm:w-[24rem]" />
-        <motion.div className="orb absolute bottom-[10%] left-[20%] h-[13rem] w-[13rem] rounded-full bg-[#28c8b4]/16 sm:bottom-[8%] sm:left-[34%] sm:h-[20rem] sm:w-[20rem]" />
-        <div className="noise absolute inset-0 opacity-[0.11]" />
+        <div className="noise absolute inset-0 opacity-[0.10]" />
       </div>
 
-      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/65 backdrop-blur-2xl">
+      <header className="sticky top-0 z-50 border-b border-border/30 bg-background/40 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
           <Link href="#hero" className="font-display text-lg font-semibold tracking-tight">
             Landings_Akyl

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes gradient-shift {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
 :root {
   --background: 248 247 242;
   --foreground: 14 14 18;
@@ -40,27 +48,45 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: -3;
+  z-index: -1;
   pointer-events: none;
-  background:
-    linear-gradient(rgb(255 255 255 / 0.65), rgb(255 255 255 / 0.65)),
-    url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2070&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
+  background-image:
+    radial-gradient(ellipse 240% 70% at 15% 18%, rgb(79 70 229 / 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 200% 60% at 85% 70%, rgb(255 122 92 / 0.16) 0%, transparent 50%),
+    radial-gradient(ellipse 220% 50% at 42% 88%, rgb(40 200 180 / 0.14) 0%, transparent 50%),
+    radial-gradient(ellipse 180% 45% at 65% 15%, rgb(250 200 100 / 0.14) 0%, transparent 48%),
+    radial-gradient(ellipse 160% 40% at 10% 70%, rgb(255 180 120 / 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 35%, rgb(255 255 255 / 0.55) 0%, transparent 45%);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  animation: gradient-shift 20s ease-in-out infinite;
 }
 
 html[data-theme='dark'] body::before {
+  background-image:
+    radial-gradient(circle at 18% 20%, rgb(139 130 255 / 0.15), transparent 28rem),
+    radial-gradient(circle at 82% 14%, rgb(200 70 70 / 0.10), transparent 26rem),
+    radial-gradient(circle at 50% 80%, rgb(50 140 220 / 0.12), transparent 30rem);
+  background-size: cover;
+  background-position: center;
+  animation: none;
+}
+
+/* Light theme: dot pattern + decorative rings */
+html[data-theme]:not([data-theme='dark']) body::after {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: -3;
+  z-index: -1;
   pointer-events: none;
-  background:
-    linear-gradient(rgb(8 8 12 / 0.55), rgb(8 8 12 / 0.55)),
-    url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1974&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
+  background-image:
+    radial-gradient(rgb(79 70 229 / 0.07) 0.7px, transparent 0.7px),
+    radial-gradient(rgb(222 219 212 / 0.4) 0.5px, transparent 0.5px);
+  background-size: 42px 42px, 21px 21px;
 }
+
+
 
 ::selection {
   background: rgb(var(--accent) / 0.26);
